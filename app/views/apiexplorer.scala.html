@@ -19,7 +19,10 @@
 
 
                 var submit = function(event) {
+                    var start = new Date().getTime();
                     event.preventDefault();
+
+                    $callStatus.text("...");
 
                     // override URI with input field if exists
                     $this.find('input.linkref' ).each(function() {
@@ -36,12 +39,15 @@
                         ajaxParam.contentType = 'application/json';
                     }
 
+                    var displayStatus = function(jqXHR, textStatus) {
+                        var status = jqXHR.status,
+                            duration = new Date().getTime() - start;
+
+                        $callStatus.text("response status: " + status + " (" + textStatus + ") (in " + duration + "ms)");
+                    }
+
                     $.ajax(ajaxParam).done ( function ( data, textStatus, jqXHR) {
-
-                        var status = jqXHR.status;
-
-                        $callStatus.text("response status: " + status + " (" + textStatus + ")");
-
+                        displayStatus(jqXHR, textStatus);
                         var response = jqXHR.responseText;
                         if (jqXHR.responseJSON) {
                             response = JSON.stringify(jqXHR.responseJSON, null, 4);
@@ -49,8 +55,7 @@
                         $callResponse.text(response);
 
                     }).fail(function(jqXHR, textStatus, errorThrown) {
-                        var status = jqXHR.status;
-                        $callStatus.text("response status: " + status + " (" + textStatus + ")");
+                        displayStatus(jqXHR, textStatus);
                         $callResponse.text(jqXHR.responseText);
                     });
                 };
