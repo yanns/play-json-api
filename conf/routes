@@ -9,5 +9,13 @@ GET     /api/java/manually          controllers.api.JavaRestAPI.manually()
 GET     /api/java/fromPOJO          controllers.api.JavaRestAPI.fromPOJO()
 GET     /api/java/fromPOJOs         controllers.api.JavaRestAPI.fromPOJOs()
 
+GET     /api/scala/fromString       controllers.api.ScalaRestAPI.fromString
+GET     /api/scala/manually         controllers.api.ScalaRestAPI.manually
+GET     /api/scala/fromCaseClass1   controllers.api.ScalaRestAPI.fromCaseClass1
+GET     /api/scala/fromCaseClass2   controllers.api.ScalaRestAPI.fromCaseClass2
+GET     /api/scala/fromCaseClass3   controllers.api.ScalaRestAPI.fromCaseClass3
+GET     /api/scala/fromCaseClass4   controllers.api.ScalaRestAPI.fromCaseClass4
+GET     /api/scala/fromCaseClass5   controllers.api.ScalaRestAPI.fromCaseClass5
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
