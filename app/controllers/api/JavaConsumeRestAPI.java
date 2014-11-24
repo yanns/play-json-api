@@ -22,7 +22,6 @@ public class JavaConsumeRestAPI extends Controller {
     @BodyParser.Of(BodyParser.Json.class)
     public static Result consumeToPOJO() {
         JsonNode json = request().body().asJson();
-        // be careful of UnrecognizedPropertyException
         UserGroup userGroup = Json.fromJson(json, UserGroup.class);
         return ok(Json.toJson(userGroup));
     }
