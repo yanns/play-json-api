@@ -6,6 +6,11 @@ consume a REST API
 
   JSON -> model classes
   in scala: JSON -> extract data
+  // TODO: validate id != -1 (.filter(_ != -1))
+  // TODO: with optional field
+  // TODO: defined default reads and writes
+  // TODO: defined reads and writes in one time
+
 
 produce JSON
   send JSON to other server, with WS client
