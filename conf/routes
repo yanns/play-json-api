@@ -11,6 +11,9 @@ GET     /api/java/fromPOJOs         controllers.api.JavaRestAPI.fromPOJOs()
 POST    /api/java/consumeJson       controllers.api.JavaConsumeRestAPI.consumeJson()
 POST    /api/java/consumeToPOJO     controllers.api.JavaConsumeRestAPI.consumeToPOJO()
 
+GET     /api/java/ws/consumeJson         controllers.api.JavaWithWS.consumeJson()
+POST    /api/java/ws/sendAndConsumeJson  controllers.api.JavaWithWS.sendAndConsumeJson()
+
 GET     /api/scala/fromString       controllers.api.ScalaRestAPI.fromString
 GET     /api/scala/manually         controllers.api.ScalaRestAPI.manually
 GET     /api/scala/fromCaseClass1   controllers.api.ScalaRestAPI.fromCaseClass1
