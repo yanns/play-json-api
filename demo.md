@@ -1,33 +1,30 @@
-When do you need JSON:
+1. build JSON with Java
 
-consume a REST API
-  body of response with WS client
-  body of request
+2. build JSON with Scala
 
-  JSON -> model classes
+3. consume JSON (request body) with Java
+
     in java:
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Json.setObjectMapper(mapper);
 
+4. consume JSON (request body) with Scala
 
-  in scala
   // TODO: validate id != -1 (.filter(_ != -1))
   // TODO: with optional field
   // TODO: defined default reads and writes
   // TODO: defined reads and writes in one time
 
 
-produce JSON
-  send JSON to other server, with WS client
-  send JSON to client (browser, other server)
+5. send and consume JSON with WS in Java
 
-  model classes -> JSON
-  construct JSON directly
 
-transform JSON
-  consume a REST API to produce a REST API
+6. send and consume JSON with WS in Scala
+
+
+7. consume and transform JSON in Scala
 
   val copyValue: Reads[JsObject] = (
       (__ \ "id").json.prune and
