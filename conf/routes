@@ -8,6 +8,8 @@ GET     /api/java/fromString        controllers.api.JavaRestAPI.fromString()
 GET     /api/java/manually          controllers.api.JavaRestAPI.manually()
 GET     /api/java/fromPOJO          controllers.api.JavaRestAPI.fromPOJO()
 GET     /api/java/fromPOJOs         controllers.api.JavaRestAPI.fromPOJOs()
+POST    /api/java/consumeJson       controllers.api.JavaConsumeRestAPI.consumeJson()
+POST    /api/java/consumeToPOJO     controllers.api.JavaConsumeRestAPI.consumeToPOJO()
 
 GET     /api/scala/fromString       controllers.api.ScalaRestAPI.fromString
 GET     /api/scala/manually         controllers.api.ScalaRestAPI.manually
