@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET         /                                      controllers.Application.index
+GET         /                                      controllers.Application.indexJava
 GET         /api/java/fromString                   controllers.api.JavaRestAPI.fromString()
 GET         /api/java/manually                     controllers.api.JavaRestAPI.manually()
 GET         /api/java/fromPOJO                     controllers.api.JavaRestAPI.fromPOJO()
@@ -13,6 +13,8 @@ POST        /api/java/consumeToPOJO                controllers.api.JavaConsumeRe
 
 GET         /api/java/ws/consumeJson               controllers.api.JavaWithWS.consumeJson()
 POST        /api/java/ws/sendAndConsumeJson        controllers.api.JavaWithWS.sendAndConsumeJson()
+
+GET         /scala                                 controllers.Application.indexScala
 
 GET         /api/scala/fromString                  controllers.api.ScalaRestAPI.fromString
 GET         /api/scala/manually                    controllers.api.ScalaRestAPI.manually

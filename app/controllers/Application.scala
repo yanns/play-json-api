@@ -4,11 +4,15 @@ import play.api.mvc._
 
 object Application extends Controller {
 
-  def index = Action {
+  def indexJava = index("/api/java")
+
+  def indexScala = index("/api/scala")
+
+  private def index(filter: String) = Action {
     val pattern = raw"(\$$)(\w+)(<\[\^/\]\+>)"
     val doc = play.api.Play.current.routes.map {
       _.documentation
-        .filter(_._2.startsWith("/api"))
+        .filter(_._2.startsWith(filter))
         .map { case (httpVerb, uri, controller) => addQueryParameters(httpVerb, uri, controller) }
         .map(d => d._1 -> d._2.replaceAll(pattern, "{$2}"))
     }
