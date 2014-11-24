@@ -29,4 +29,15 @@ produce JSON
 transform JSON
   consume a REST API to produce a REST API
 
+  val copyValue: Reads[JsObject] = (
+      (__ \ "id").json.prune and
+      (__ \ "name").json.copyFrom( (__ \ "group").json.pick )
+    ).reduce
+
+  val addValue: Reads[JsObject] = (
+      (__ \ "id").json.prune and
+        (__ \ "group").json.pickBranch and
+        (__ \ "myfield").json.put(JsNumber(42))
+    ).reduce
+
 
