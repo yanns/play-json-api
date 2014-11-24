@@ -5,7 +5,14 @@ consume a REST API
   body of request
 
   JSON -> model classes
-  in scala: JSON -> extract data
+    in java:
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        Json.setObjectMapper(mapper);
+
+
+  in scala
   // TODO: validate id != -1 (.filter(_ != -1))
   // TODO: with optional field
   // TODO: defined default reads and writes
