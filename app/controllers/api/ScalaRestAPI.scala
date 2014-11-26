@@ -33,8 +33,8 @@ object ScalaRestAPI extends Controller {
     val userGroupWrite = new Writes[UserGroup] {
       override def writes(u: UserGroup): JsValue =
         Json.obj(
-          "id" -> 456l,
-          "group" -> "play user group"
+          "id" -> u.id,
+          "group" -> u.group
         )
     }
 
