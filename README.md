@@ -26,7 +26,7 @@ It was used at the [Berlin User Group](http://www.meetup.com/Play-Berlin-Branden
 - validate id != -1 with `(.filter(_ != -1))`
 - show with optional field with `Option[String]`
 - defined default reads and writes
-- defined reads and writes in one time
+- defined reads and writes in one time (with Formats)
 
 
 5. send and consume JSON with WS in Java
